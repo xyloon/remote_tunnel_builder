@@ -18,8 +18,9 @@ DIRBASE="/binaries"
 
 for build_one_item in "${build_list[@]}"; do
     IFS=' ' read -r -a build_info <<< "$build_one_item"
-    GOOS="${build_info[0]}"
-    GOARCH="${build_info[1]}"
+    export GOOS="${build_info[0]}"
+    export GOARCH="${build_info[1]}"
+    echo "Processing $GOOS/$GOARCH"
     make
     mkdir -p "$DIRBASE/$GOOS/$GOARCH"
     if [ "$GOOS" == "windows" ]; then
@@ -31,5 +32,4 @@ for build_one_item in "${build_list[@]}"; do
         mv rtun "$DIRBASE/$GOOS/$GOARCH/rtun"
         mv rtun-server "$DIRBASE/$GOOS/$GOARCH/rtun-server"
     fi
-
 done
