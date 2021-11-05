@@ -1,6 +1,6 @@
 # remote_tunnel_builder
 
-This project making automation of binary build of the remote-tunnel project(https://github.com/snsinfu/reverse-tunnel)
+This project making automation of binary build of the reverse-tunnel project(https://github.com/snsinfu/reverse-tunnel)
 
 ## Docker image build
 
